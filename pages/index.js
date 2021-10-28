@@ -4,6 +4,6 @@ export default function home()
 {
     return(
     <>
-        <Button type="submit" size="large" label="test"  />
+        <Button color="blue" size="large" variant="outline" />
     </>)
 }
