@@ -2,9 +2,9 @@
   "name": "lightui",
   "version": "1.0.0",
   "description": "awosome and light ui library for reactjs",
-  "main": "index.js",
+  "repository": "https://github.com/chrscalv/lightui.git",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "next dev"
   },
   "keywords": [
     "react",
@@ -16,12 +16,18 @@
   "devDependencies": {
     "autoprefixer": "^10.3.7",
     "postcss": "^8.3.11",
+    "postcss-cli": "^9.0.1",
     "tailwindcss": "^2.2.17"
   },
   "dependencies": {
+    "@babel/preset-env": "^7.15.8",
+    "@swc/cli": "^0.1.51",
+    "@swc/core": "^1.2.105",
     "classnames": "^2.3.1",
+    "create-index": "^2.6.0",
     "next": "^12.0.0",
     "react": "^17.0.2",
+    "react-copy-to-clipboard": "^5.0.4",
     "react-dom": "^17.0.2"
   }
 }
