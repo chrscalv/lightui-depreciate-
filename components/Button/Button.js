@@ -4,14 +4,22 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 const buttonBgColors = {
-	lightBlue : 'bg-blue-300',
-	blue : 'bg-blue-500',
-	darkBlue : 'bg-blue-800',
-	yellow : 'bg-yellow-500'
+	lightBlue : 'bg-blue-400',
+	blue : 'bg-blue-400',
+	darkBlue : 'bg-blue-900',
+	yellow : 'bg-yellow-800',
+	lime : 'bg-lime-700'
 }
+
 const buttonActiveColors = []
 
-const buttonHoverColors = []
+const buttonHoverColors = {
+	lightBlue : 'hover:bg-blue-300',
+	blue : 'hover:bg-blue-500',
+	darkBlue : 'hover:bg-blue-800',
+	yellow : 'hover:bg-yellow-200',
+	lime :'hover:bg-lime-600'
+}
 
 const buttonFocusColors	= []
 
@@ -19,24 +27,49 @@ const outlinedBorderColors = {
 	lightBlue : 'border-blue-300',
 	blue : 'border-blue-500',
 	darkBlue : 'border-blue-800',
-	yellow : 'border-yellow-500'
+	yellow : 'border-yellow-500',
+	lime: 'border-lime-700'
 }
 
 const outlinedTextColors = {
 	lightBlue : 'text-blue-300',
 	blue : 'text-blue-500',
 	darkBlue : 'text-blue-800',
-	yellow : 'text-yellow-500'
+	yellow : 'text-yellow-400',
+	lime : 'text-lime-700'
 }
 
 const outlinedHoverColors = {
-	lightBlue : 'hover:bg-blue-300',
+	lightBlue : 'hover:bg-blue-400',
 	blue : 'hover:bg-blue-300',
 	darkBlue : 'hover:bg-blue-300',
-	yellow : 'hover:bg-blue-300'
+	yellow : 'hover:bg-yellow-100',
+	lime: 'hover:bg-lime-600'
 }
 
-const outlinedFocusColors = []
+const outlinedBorderHoverColors = {
+	lightBlue : 'hover:border-blue-600',
+	blue : 'hover:border-blue-500',
+	darkBlue : 'hover:border-blue-900',
+	yellow : 'hover:border-yellow-400',
+	lime: 'hover:border-lime-800'
+}
+
+const linkTextColor = {
+	lightBlue : 'text-blue-300',
+	blue : 'text-blue-500',
+	darkBlue : 'text-blue-800',
+	yellow : 'text-yellow-500',
+	lime : 'text-lime-700'
+}
+
+const linkBgHover = {
+	lightBlue : 'hover:bg-blue-400',
+	blue : 'hover:bg-blue-200',
+	darkBlue : 'hover:bg-blue-200',
+	yellow : 'hover:bg-yellow-200',
+	lime: 'hover:bg-lime-200'
+}
 
 const Button = forwardRef((
 	{
@@ -47,13 +80,15 @@ const Button = forwardRef((
 		size,
 		color,
 		href,
+		icon,
+		rounded,
 		disabled,
 		...props
 	}, ref
 ) => {
 	let classes = [];
 
-        // rounded = rounded ? 'rounded-full' : 'rounded-lg';
+        rounded = rounded ? 'rounded-full' : 'rounded-lg';
 
         const sharedClasses = [
             'flex',
@@ -68,11 +103,13 @@ const Button = forwardRef((
             'focus:shadow-none',
             'transition-all',
             'duration-300',
+			rounded
         ];
 
         const buttonFilled = [
             'text-white',
             buttonBgColors[color],
+			buttonHoverColors[color]
         ];
 
         const buttonOutline = [
@@ -80,14 +117,16 @@ const Button = forwardRef((
             'border',
             'border-solid',
             'shadow-none',
-			// 'hover:bg-blue-300',
 			outlinedBorderColors[color],
 			outlinedTextColors[color],
-			outlinedHoverColors[color]
+			outlinedHoverColors[color],
+			outlinedBorderHoverColors[color]
         ];
 
         const buttonLink = [
             `bg-transparent`,
+			linkTextColor[color],
+			linkBgHover[color]
         ];
 
         const buttonSmall = [
@@ -144,9 +183,11 @@ const Button = forwardRef((
 Button.defaultProps = {
 	label : 'button',
 	href: '#',
-	variant: 'outlined',
+	type: 'button',
+	variant: 'button',
+	size: 'medium',
 	color : 'blue',
-	constiant : 'button'
+	rounded : false
 }
 
 Button.propTypes = {
@@ -154,6 +195,8 @@ Button.propTypes = {
 	type: PropTypes.oneOf(['button', 'submit', 'reset']),
 	className: PropTypes.object,
 	size: PropTypes.oneOf(['small', 'medium', 'large']),
+	variant: PropTypes.oneOf(['button', 'outline', 'link']),
+	rounded : PropTypes.bool,
 	color: PropTypes.string,
 	href: PropTypes.string,
 	disabled: PropTypes.bool,
