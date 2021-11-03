@@ -25,13 +25,12 @@ const Avatar = forwardRef((
         ...props
     }, ref
 ) => {
-    return (
-        <img
-            src={src} alt={alt}
-            className={classNames(`${sizes[size]} ${className} rounded-full`)}
-        />
-    )
-})
+        return (
+            <img
+                src={src} alt={alt}
+                className={classNames(`${sizes[size]} ${className} rounded-full`)} />
+        );
+    })
 
 Avatar.defaultProps = {
     src:"https://picsum.photos/70/70",
