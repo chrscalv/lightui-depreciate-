@@ -4,7 +4,9 @@ import classNames from 'classnames';
 import Button from '../Button/Button';
 
 const colors = {
-  lightBlue: 'bg-blue-400',
+  white: 'bg-white',
+  lightGray: 'bg-gray-50',
+  lightBlue: 'bg-blue-300',
   blue: 'bg-blue-400',
   darkBlue: 'bg-blue-900',
   yellow: 'bg-yellow-800',
@@ -21,7 +23,7 @@ const Navbar = forwardRef((
 ) => (
   <nav className={`${colors[color]} shadow-md h-auto`}>
     <div className="container mx-auto">
-      <div className="flex items-center">
+      <div className="flex justify-between items-center">
         {children}
       </div>
     </div>
@@ -29,7 +31,8 @@ const Navbar = forwardRef((
 ))
 
 Navbar.defaultProps = {
-  title: 'Navbar'
+  title: 'Navbar',
+  color: 'white'
 }
 
 Navbar.propTypes = {

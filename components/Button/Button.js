@@ -4,9 +4,9 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 const buttonBgColors = {
-	lightBlue : 'bg-blue-400',
+	lightBlue : 'bg-blue-300',
 	blue : 'bg-blue-400',
-	darkBlue : 'bg-blue-900',
+	darkBlue : 'bg-blue-600',
 	yellow : 'bg-yellow-800',
 	lime : 'bg-lime-700'
 }
@@ -191,7 +191,7 @@ Button.defaultProps = {
 }
 
 Button.propTypes = {
-	label: PropTypes.node.isRequired,
+	label: PropTypes.string.isRequired,
 	type: PropTypes.oneOf(['button', 'submit', 'reset']),
 	className: PropTypes.object,
 	size: PropTypes.oneOf(['small', 'medium', 'large']),
