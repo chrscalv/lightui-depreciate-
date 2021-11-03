@@ -1,6 +1,6 @@
 ### @ligth ui
 
-###Usage
+### Usage
 
 ```bash
 git clone https://github.com/chrscalv/lightui.git
