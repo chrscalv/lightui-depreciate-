@@ -15,7 +15,7 @@ npm run dev
 ```
 
 ### ligth ui directory structure
-|-- .assets
+    |-- .assets
         |--styles
            |--index.css
     |-- components
