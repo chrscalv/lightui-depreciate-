@@ -1,6 +1,6 @@
 import { forwardRef } from "react";
 import PropTypes from 'prop-types';
-import { Button } from "..";
+import { CardBody } from "..";
 
 const bgColor = {
   white: 'bg-white',
@@ -14,12 +14,8 @@ const bgColor = {
 const Card = forwardRef((
   {
     children,
-    title,
-    subtitle,
-    size,
-    width,
-    height,
-    loading
+    bgColor,
+    ...props
 
   }, ref
 ) => (
