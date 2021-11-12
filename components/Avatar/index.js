@@ -3,15 +3,15 @@ import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
 const sizes = {
-    sm: 'w-9',
-    md: 'w-12',
-    lg: 'w-16',
-    xl: 'w-20'
+    sm: 'w-9 h-9',
+    md: 'w-12 h-12',
+    lg: 'w-16 h-16',
+    xl: 'w-20 h-20'
 }
 
 const Avatar = forwardRef((
     {
-        src,
+        src,    
         alt,
         size,
         width,
@@ -28,14 +28,16 @@ const Avatar = forwardRef((
         return (
             <img
                 src={src} alt={alt}
-                className={classNames(`${sizes[size]} ${className} rounded-full`)} />
+                className={classNames(`${sizes[size]} ${className} rounded-full`)}
+                style={{width,height}}
+                />
         );
     })
 
 Avatar.defaultProps = {
-    src:"https://picsum.photos/70/70",
+    src:"https://source.unsplash.com/WLUHO9A_xik/1600x900",
     alt: 'lightui component',
-    size: 'sm'
+    size: 'sm',
 }
 
 Avatar.propTypes = {
@@ -50,5 +52,3 @@ Avatar.propTypes = {
 }
 
 export default Avatar;
-
-
