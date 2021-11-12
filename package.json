@@ -6,12 +6,15 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "build:package": ""
+    "build:package": "",
+    "render" : ""
   },
   "keywords": [
     "react",
     "ui",
-    "framework"
+    "framework",
+    "lightui",
+    "react component"
   ],
   "author": "christopher calvin",
   "license": "MIT",
@@ -25,8 +28,8 @@
     "@babel/preset-env": "^7.15.8",
     "@swc/cli": "^0.1.51",
     "@swc/core": "^1.2.105",
+    "@swc/register": "^0.1.7",
     "classnames": "^2.3.1",
-    "create-index": "^2.6.0",
     "next": "^12.0.0",
     "prop-types": "^15.7.2",
     "react": "^17.0.2",
