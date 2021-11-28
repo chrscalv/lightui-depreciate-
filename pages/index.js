@@ -1,14 +1,21 @@
 import Dynamic from 'next/dynamic'
-import cardSubTitle from '../components/Card/CardSubTitle'
-import cardTitle from '../components/Card/CardTitle'
 import NavMenu from '../components/Navbar/NavMenu'
 import NavTitle from '../components/Navbar/NavTitle'
 import Menu from '../components/Menu/Menu'
-import Container from '../components/Container';
-import Avatar from '../components/Avatar/Avatar'
+
+import { 
+  Avatar, 
+  Container, 
+  Button, 
+  Card,
+  CardImage,
+  CardBody,
+  CardTitle,
+  CardText,
+  CardSubTitle  
+} from '../components'
 
 export default function home() {
-  const Button = Dynamic(() => import('../components/Button/Button'))
   const Navbar = Dynamic(() => import('../components/Navbar/Navbar'))
   return (
     <>
@@ -24,11 +31,14 @@ export default function home() {
           </NavMenu>
         </Navbar>
         <Container>
-          <Button />
-          <Avatar  />
-          <Avatar size="md" alt="test"/>
-          <Avatar size="lg" />
-          <Avatar size="xl" />
+          <Card >
+            <CardImage />
+            <CardBody>
+              <CardTitle>Hallo</CardTitle>
+              <CardSubTitle />
+              <CardText > Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</CardText>
+            </CardBody>
+          </Card>
         </Container>
       </main>
     </>

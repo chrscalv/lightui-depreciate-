@@ -90,7 +90,7 @@ const Button = forwardRef((
 
         rounded = rounded ? 'rounded-full' : 'rounded-lg';
 
-        const sharedClasses = [
+        const generalClass = [
             'flex',
             'items-center',
             'justify-center',
@@ -130,18 +130,18 @@ const Button = forwardRef((
         ];
 
         const buttonSmall = [
-            ...sharedClasses,
+            ...generalClass,
             'text-sm',
             'leading-normal',
 			'py-2 px-4'
         ];
         const buttonMedium = [
-            ...sharedClasses,
+            ...generalClass,
             'leading-normal',
 			'py-2.5 px-8'
         ];
         const buttonLarge = [
-            ...sharedClasses,
+            ...generalClass,
             'text-sm',
             'leading-relaxed',
 			'py-3 px-12 text-lg'

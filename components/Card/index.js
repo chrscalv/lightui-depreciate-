@@ -2,7 +2,7 @@ import { forwardRef } from "react";
 import PropTypes from 'prop-types';
 import { CardBody } from "..";
 
-const bgColor = {
+const bgColors = {
   white: 'bg-white',
   lightBlue: 'bg-blue-300',
   blue: 'bg-blue-400',
@@ -11,30 +11,45 @@ const bgColor = {
   lime: 'bg-lime-700'
 }
 
+const shadows = {
+  '1'   : 'shadow-inner',
+  '2'      : 'shadwow-sm',
+  '3'      : 'shadow-md',
+  '4'      : 'shadow-lg',
+  '5'      : 'shadow-xl',
+  '6'     : 'shadow-2xl',
+  '7'     : 'shadow-3xl'
+}
+
+const shapped = {
+  //
+}
+
 const Card = forwardRef((
   {
     children,
-    bgColor,
+    color,
+    shadow,
     ...props
 
   }, ref
-) => (
-  <div className="bg-white rounded-xl shadow-2xl overflow-hidden relative lg:max-w-sm">
-    <div className="">
-      {children}
+) => {
+  return(
+    <div className={`${bgColors[color]} rounded-xl ${shadows[shadow]}  overflow-hidden relative`}>
+        {children}
     </div>
-  </div>
-))
+  )
+})
 
 Card.defaultProps = {
   color : 'white',
-  horizontal: false
+  shadow : '5',
 }
 
 Card.propTypes = {
   children: PropTypes.node.isRequired,
   color: PropTypes.string.isRequired,
-  horizontal: PropTypes.bool.isRequired
+  shadow: PropTypes.string.isRequired
 }
 
 export default Card;
